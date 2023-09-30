@@ -91,10 +91,10 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
 /**
  * Request Audit
  *
- * @param bodydata
+ * @param bodydata - Transaction Data
  * @returns Array.
  */
-async function getData(bodydata: object | null) {
+async function getData(bodydata: object | null): Promise<any> {
   console.log('tst', QUICK_INTEL_KEY, QUICK_INTEL_URL);
   const response = await fetch(
     `${QUICK_INTEL_URL}`,
