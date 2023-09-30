@@ -1,4 +1,4 @@
-# @quick-intel/quick-intel-snap
+# @quick-intel/quickintel-snap
 
 This is a Token Audit Snap by Quick Intel to provide token audit for users to help bring safety to web3 users.
 
