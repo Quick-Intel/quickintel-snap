@@ -39,7 +39,7 @@ build/Release
 node_modules/
 
 # QUICK_INTEL_KEY
-packages/snap/quickintel/constants.ts
+packages/snap/quickintel/constants.prod.ts
 
 # TypeScript cache
 *.tsbuildinfo
