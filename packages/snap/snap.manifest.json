@@ -1,0 +1,33 @@
+{
+  "version": "0.1.1",
+  "description": "Token Audit by Quick Intel",
+  "proposedName": "Quick Intel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+  },
+  "source": {
+    "shasum": "1EKj5GJ92/aAlmPTuVad6bNl0lMOS1rqrthg6Kl9v/0=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/quickiLogo.svg",
+        "packageName": "@quickintel/quickintel-snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "snap_dialog": {},
+    "endowment:network-access": {},
+    "endowment:ethereum-provider": {},
+    "endowment:transaction-insight": {
+      "allowTransactionOrigin": true
+    },
+    "endowment:rpc": {
+      "dapps": true,
+      "snaps": false
+    }
+  },
+  "manifestVersion": "0.1"
+}
