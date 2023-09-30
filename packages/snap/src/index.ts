@@ -16,7 +16,7 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
   };
 
   const auditReq = await getData(body);
-  console.log('sending tkns', txData, transaction?.data);
+
   const panelArr: any = [];
   // Display Token Audit details.
   if (
@@ -89,24 +89,20 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
 };
 
 /**
- * Request Audit
+ * Request Audit.
  *
- * @param bodydata - Transaction Data
+ * @param bodydata - Transaction Data.
  * @returns Array.
  */
 async function getData(bodydata: object | null): Promise<any> {
-  console.log('tst', QUICK_INTEL_KEY, QUICK_INTEL_URL);
-  const response = await fetch(
-    `${QUICK_INTEL_URL}`,
-    {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        api_key: QUICK_INTEL_KEY,
-      },
-      body: JSON.stringify(bodydata),
+  const response = await fetch(`${QUICK_INTEL_URL}`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+      api_key: QUICK_INTEL_KEY,
     },
-  );
-  return response?.json();
+    body: JSON.stringify(bodydata),
+  });
+  return bodydata ? response?.json() : null;
 }

@@ -1,6 +1,6 @@
 {
   "name": "@quickintel/quickintel-snap",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "private": true,
   "description": "A MetaMask Snap that can audit a token, created by Quick Intel.",
   "repository": {
@@ -10,10 +10,9 @@
   "license": "(MIT-0 OR Apache-2.0)",
   "main": "./dist/bundle.js",
   "files": [
-    "audit/",
+    "quickintel/",
     "dist/",
     "images/",
-    ".env",
     "snap.manifest.json"
   ],
   "scripts": {

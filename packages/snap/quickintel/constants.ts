@@ -1,5 +1,5 @@
-const QUICK_INTEL_URL = ''
+const QUICK_INTEL_URL = '';
 
 const QUICK_INTEL_KEY = '';
 
-export { QUICK_INTEL_URL, QUICK_INTEL_KEY }
+export { QUICK_INTEL_URL, QUICK_INTEL_KEY };
