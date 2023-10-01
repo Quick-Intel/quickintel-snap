@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "description": "",
-  "homepage": "https://github.com/Quick-Intel/token-audit-snap#readme",
+  "homepage": "https://github.com/Quick-Intel/quickintel-snap#readme",
   "bugs": {
-    "url": "https://github.com/Quick-Intel/token-audit-snap/issues"
+    "url": "https://github.com/Quick-Intel/quickintel-snap/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Quick-Intel/token-audit-snap.git"
+    "url": "git+https://github.com/Quick-Intel/quickintel-snap.git"
   },
   "license": "(MIT-0 OR Apache-2.0)",
   "author": "",
