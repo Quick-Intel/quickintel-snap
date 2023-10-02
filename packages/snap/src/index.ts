@@ -29,6 +29,11 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
         text(
           'This snap only provides transaction insights for tokens when interacting with contracts (ie. DEX Swaps.)',
         ),
+        divider(),
+        text(`Contact the Quick Intel team for any questions or concerns:`),
+        copyable(
+          `https://linktr.ee/quickintel`,
+        ),
       ]),
     };
   }
@@ -41,7 +46,7 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
             item?.tokenSymbol
           })\n\n\nContract Verified: ${
             item?.verified ? '✅' : '❌'
-          }\n\n\nWarnings: ${item?.warnings}${
+          }\n\n\nWarnings: ${item?.warnings ? item?.warnings : 'N/A'}${
             item?.warning_Details?.length > 0
               ? `\n\n\n${item?.warning_Details
                   ?.map((itm: any) => {
@@ -49,7 +54,7 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
                   })
                   .join('')}`
               : ''
-          }\n\n\nCautions: ${item?.cautions}${
+          }\n\n\nCautions: ${item?.cautions ? item?.cautions : 'N/A'}${
             item?.caution_Details?.length > 0
               ? `\n\n\n${item?.caution_Details
                   ?.map((itm: any) => {
@@ -76,6 +81,11 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
     panelArr.push(
       text(
         `No Audit Results or chain not supported for Token Audit. Contact Quick Intel for more information.`,
+      ),
+      divider(),
+      text(`Contact the Quick Intel team for any questions or concerns:`),
+      copyable(
+        `https://linktr.ee/quickintel`,
       ),
     );
   }
