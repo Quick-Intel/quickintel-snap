@@ -7,7 +7,7 @@
     "url": "https://github.com/Quick-Intel/quickintel-snap.git"
   },
   "source": {
-    "shasum": "jv8brBe1LX44LJyxIRypCswDWSYUsbHx2sq2DA9l6VU=",
+    "shasum": "EMKkemXEf4BQEOxxiUSq0ISZipTyCkk5KAxzvUv/U4Y=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -20,7 +20,6 @@
   "initialPermissions": {
     "snap_dialog": {},
     "endowment:network-access": {},
-    "endowment:ethereum-provider": {},
     "endowment:transaction-insight": {
       "allowTransactionOrigin": true
     },

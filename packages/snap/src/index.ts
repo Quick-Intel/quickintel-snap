@@ -1,18 +1,22 @@
 import { OnTransactionHandler } from '@metamask/snaps-types';
 import { divider, heading, panel, text, copyable } from '@metamask/snaps-ui';
-import { QUICK_INTEL_URL, QUICK_INTEL_KEY } from '../quickintel/constants';
+import {
+  QUICK_INTEL_URL,
+  QUICK_INTEL_PUBLIC_SNAP_KEY,
+} from '../quickintel/constants';
 
 // Handle outgoing transactions.
-export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
+export const onTransaction: OnTransactionHandler = async ({
+  transaction,
+  chainId,
+}) => {
   const quickIntelShield = '🛡';
-
-  const chainId = await ethereum.request({ method: 'eth_chainId' });
 
   const txData = transaction?.data;
 
   const body = {
     chainid: chainId,
-    txdata: txData?.toString(),
+    txdata: txData,
   };
 
   const auditReq = await getData(body);
@@ -31,20 +35,29 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
         ),
         divider(),
         text(`Contact the Quick Intel team for any questions or concerns:`),
-        copyable(
-          `https://linktr.ee/quickintel`,
-        ),
+        copyable(`https://linktr.ee/quickintel`),
       ]),
     };
   }
 
-  if (auditReq?.length > 0) {
+  if (auditReq && auditReq?.length > 0) {
     auditReq.forEach((item: any) => {
+      const auditUrl = new URL('https://app.quickintel.io/scanner');
+      auditUrl.searchParams.append('type', 'token');
+      auditUrl.searchParams.append('chain', item?.chain);
+      auditUrl.searchParams.append('contractAddress', item?.tokenAddress);
+
       panelArr.push(
         text(
           `Token: ${item?.tokenName} (${
             item?.tokenSymbol
-          })\n\n\nContract Verified: ${
+          })\n\n\nCA: ${item?.tokenAddress?.slice(
+            0,
+            4,
+          )}..${item?.tokenAddress?.slice(
+            item?.tokenAddress?.length - 4,
+            item?.tokenAddress?.length,
+          )}\n\n\nContract Verified: ${
             item?.verified ? '✅' : '❌'
           }\n\n\nWarnings: ${item?.warnings ? item?.warnings : 'N/A'}${
             item?.warning_Details?.length > 0
@@ -66,15 +79,9 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
         ),
         divider(),
         text(`View Full Audit on Quick Intel:`),
-        copyable(
-          `https://app.quickintel.io/scanner?type=token&chain=${item?.chain}&contractAddress=${item?.tokenAddress}`,
-        ),
+        copyable(`${auditUrl}`),
       );
     });
-  } else {
-    throw new Error(
-      `No Audit Results or chain not supported for Token Audit. Contact Quick Intel for more information.`,
-    );
   }
 
   if (panelArr.length === 0) {
@@ -84,9 +91,7 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
       ),
       divider(),
       text(`Contact the Quick Intel team for any questions or concerns:`),
-      copyable(
-        `https://linktr.ee/quickintel`,
-      ),
+      copyable(`https://linktr.ee/quickintel`),
     );
   }
 
@@ -110,9 +115,10 @@ async function getData(bodydata: object | null): Promise<any> {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      api_key: QUICK_INTEL_KEY,
+      api_key: QUICK_INTEL_PUBLIC_SNAP_KEY,
     },
     body: JSON.stringify(bodydata),
   });
-  return bodydata ? response?.json() : null;
+
+  return bodydata && response?.ok ? response?.json() : null;
 }
