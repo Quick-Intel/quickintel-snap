@@ -15,6 +15,7 @@ export const onTransaction: OnTransactionHandler = async ({
   const txData = transaction?.data;
 
   const body = {
+    from: transaction?.from,
     chainid: chainId,
     txdata: txData,
   };
