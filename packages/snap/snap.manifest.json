@@ -7,7 +7,7 @@
     "url": "https://github.com/Quick-Intel/quickintel-snap.git"
   },
   "source": {
-    "shasum": "Lw9xOwlDPD211D5GW0GPDVUObVMtoHM4XO68nS9yMo4=",
+    "shasum": "P+9hg6iUxq90Bh+JgGDRVMlu1+Vd+UtT2huUszfOtuQ=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -22,10 +22,6 @@
     "endowment:network-access": {},
     "endowment:transaction-insight": {
       "allowTransactionOrigin": true
-    },
-    "endowment:rpc": {
-      "dapps": false,
-      "snaps": true
     }
   },
   "manifestVersion": "0.1"
