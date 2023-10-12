@@ -12,7 +12,6 @@ import {
   ConnectButton,
   InstallFlaskButton,
   ReconnectButton,
-  SendHelloButton,
   Card,
 } from '../components';
 import { defaultSnapOrigin } from '../config';
@@ -133,7 +132,7 @@ const Index = () => {
   };
 
   return (
-<Container>
+    <Container>
       <Heading>
         Welcome to <Span>Token Audit by Quick Intel</Span>
       </Heading>
@@ -192,8 +191,7 @@ const Index = () => {
         <Card
           content={{
             title: 'Start Token Audit Protection',
-            description:
-              `Congratulations! Whenever you go to swap tokens on a DEX, be sure to review the Quick Intel tab and get a quick analysis of the token.`,
+            description: `Congratulations! Whenever you go to swap tokens on a DEX, be sure to review the Quick Intel tab and get a quick analysis of the token.`,
           }}
           disabled={!state.installedSnap}
           fullWidth={
@@ -204,9 +202,13 @@ const Index = () => {
         />
         <Notice>
           <p>
-            Web 3 users rely on companies like MetaMask for their Web 3 wallet needs. Many scams occur in the space, with not much insight due to the nature
-            of Web 3. Quick Intel Snap is a tool designed for all MetaMask users, to provide a layer of security. Powered by Quick Intel, you can quickly see a wide variety of 
-            potential risks before investing in a token. With Token Audit by Quick Intel Snap, you'll be able to stay a step ahead and protect yourself.
+            Web 3 users rely on companies like MetaMask for their Web 3 wallet
+            needs. Many scams occur in the space, with not much insight due to
+            the nature of Web 3. Quick Intel Snap is a tool designed for all
+            MetaMask users, to provide a layer of security. Powered by Quick
+            Intel, you can quickly see a wide variety of potential risks before
+            investing in a token. With Token Audit by Quick Intel Snap, you'll
+            be able to stay a step ahead and protect yourself.
           </p>
         </Notice>
       </CardContainer>
