@@ -1,10 +1,26 @@
 # @quickintel/quickintel-snap
 
-A MetaMask Snap that can detect risks of token when users initiate a swpa transaction on a DEX, supported by Quick Intel.
+A MetaMask Snap that can detect risks of token when users initiate a swap transaction on a DEX, supported by Quick Intel.
 
-This snap demonstrates how to develop a snap with TypeScript. It is a simple
-snap that displays a confirmation dialog when the `hello` JSON-RPC method is
-called.
+## Installation and Usage Guide
+
+Please visit https://quickintel.io/snap for all information related to the Quick Intel Snap.
+
+After installation of the snap, navigate to a DEX of your choice, initiate a swap, and the Quick Intel Snap tab will appear, where you can review the token audit results.
+
+## Audit
+
+The `snap` package has been audited by [Veridise.](https://veridise.com/audits/)
+
+You can view the [full audit report findings here.](https://github.com/Quick-Intel/quickintel-snap/blob/main/VAR_quickintel_snap.pdf)
+
+## Permissions
+
+This Snap requires several permissions to properly access the necessary APIs for proper functionality.
+
+    - "snap_dialog"
+    - "endowment:network-access"
+    - "endowment:transaction-insight"
 
 ## Testing
 
