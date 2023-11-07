@@ -1,6 +1,6 @@
 {
   "name": "@quickintel/quickintel-snap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A MetaMask Snap that can audit a token, created by Quick Intel.",
   "bugs": {
     "url": "https://github.com/Quick-Intel/quickintel-snap/issues"

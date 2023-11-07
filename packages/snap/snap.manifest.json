@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Token Audit by Quick Intel",
   "proposedName": "Quick Intel",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/Quick-Intel/quickintel-snap.git"
   },
   "source": {
-    "shasum": "sHQpFB4Tczgv8Zjy/zOCHd1u1iR31zebsLzqKe4QI/M=",
+    "shasum": "fDEVgkJ+8LZnQHX9vVDksf/EZP2nr5WKA5y14QJywyQ=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
