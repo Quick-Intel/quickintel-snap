@@ -137,7 +137,7 @@ const Index = () => {
         Welcome to <Span>Token Audit by Quick Intel</Span>
       </Heading>
       <Subtitle>
-        <code>V0.1.1</code>
+        <code>V1.0.0</code>
       </Subtitle>
       <CardContainer>
         {state.error && (

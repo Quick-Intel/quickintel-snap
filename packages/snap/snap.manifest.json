@@ -7,7 +7,7 @@
     "url": "https://github.com/Quick-Intel/quickintel-snap.git"
   },
   "source": {
-    "shasum": "P+9hg6iUxq90Bh+JgGDRVMlu1+Vd+UtT2huUszfOtuQ=",
+    "shasum": "sHQpFB4Tczgv8Zjy/zOCHd1u1iR31zebsLzqKe4QI/M=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

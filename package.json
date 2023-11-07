@@ -1,7 +1,6 @@
 {
-  "name": "@metamask/quickintel-snap",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@quickintel/quickintel-install-snap",
+  "version": "1.0.0",
   "description": "",
   "homepage": "https://github.com/Quick-Intel/quickintel-snap#readme",
   "bugs": {
